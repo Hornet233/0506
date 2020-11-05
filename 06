@@ -1,0 +1,110 @@
+an_envirment<- new.env()
+an_envirment
+
+an_envirment[["pythag"]] <- c(12,15,20,21)
+an_envirment$root<- polyroot(c(6,-5,1))
+
+assign(
+  "moonday",
+  weekdays(as.Date("1969/07/02")),
+  an_envirment
+)
+
+an_envirment[["pythag"]]
+an_envirment$root
+get("moonday",an_envirment)
+
+ls(envir = an_envirment)
+ls.str(envir = an_envirment)
+
+exists("pythag",an_envirment)
+
+(a_list <- as.list(an_envirment))
+as.environment(a_list)
+list2env(a_list)
+
+inherits = FALSE
+nested_envirment <- new.env(pparent = an_envirment)
+exists("pythag",nested_envirment,inherits = FALSE)
+
+non_stormers <<- c(3,7,8,13,17,18,21)
+get("non_stormers",envir = globalenv())
+head(ls(envir = bassenv()),20)
+
+hypotenuse <- function(x,y)sqrt(x^2+y^2)
+hypotenuse(3,4)
+hypotenuse(x=6,y=8)
+
+pig <- function(x=9,y=2){
+  sqrt(x^2+y^2)
+}
+pig()
+
+formals(hypotenuse)
+args(hypotenuse)
+formalArgs(hypotenuse)
+
+(body_of_hypotenuse <- body_of_hypotenuse)
+deparse(bady_of_hypotenuse)
+
+norlize <- function(x,m=mean=(x),s=sd(x)){
+  (x-m)/s
+}
+norlized <- normalize(c(1,3,6,10,15))
+mean(normalized)
+sd(norlized)
+normalize(c(1,3,6,10,NA))
+
+norlize <- function(x,m=mean(x,na.rm = na.rm),s=sd(x,na.rm = na.rm),na.rm = FALSE){
+(x-m)/s  
+}
+norlized(c(1,3,6,10,NA))
+norlize(c(1，3,6,10,NA),na.rm = TRUE)
+
+norlize <- function(x,m=mean(x,...),s=sd(x,...),...){
+  (x-m)/s
+}
+norlize(c(1,3,6,10,NA))
+norlize(C(1,3,6,10,NA),na.rm = TRUE)
+
+do.call(hypotenuse,list(x=3,y=4))
+
+dfr1 <- data.frame(x = 1:5,y = rt(5,1))
+dfr2 <- data.frame(x = 6:10,y = rebta(5,1,1))
+do call <- data.frame(x = 11:15,y = rbeta(5,1,1))
+do.call(rbind,list(dfr1,dfr2,dfr3))
+
+menage <- c(1,0,0,1,2,13,80)
+mean(meanage)
+
+emp_cun_dist_fn <- ecdf(rnom(50))
+is.function(emp_cun_dist_fn)
+
+f <- function(x9){
+  y9 <- 1
+  g <- function(y9){
+    (x9+y9)/2
+  }
+  g(x9)
+}
+f(sqrt(5))
+
+f <- function(x8){
+  y8 <-1
+  g(x8)
+}
+g <- function(y8){
+  (x8+y8)/2
+}
+f(sqrt(5))
+
+hypotenuse<- function(x,y){
+  z=sqrt(x^2+y^2)
+  return(z)
+}
+hypotenuse(4,2)
+pig <- function(x=hypotenuse,y=12){
+  z=sqrt(x^2+y^2)
+  print(z)
+}
+pig(1)
